@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		_rb.velocity = new Vector2(_speed, _rb.velocity.y);
 		Debug.DrawRay(transform.position, -Vector3.up * _rayLength, Color.green);
-		Debug.Log(isGrounded());
 
 		if (isGrounded()) {
 			if(Input.GetKeyDown(KeyCode.Space)){
