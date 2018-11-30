@@ -10,15 +10,19 @@ public class PlatformAdd : MonoBehaviour {
 	private float _platformWidth;
 
 	[SerializeField]
-	private float _GapMin;
+	private float _gapMin;
 	[SerializeField]
-	private float _GapMax;
+	private float _gapMax;
 
 	// public GameObject[] _platformTypes;
 	private int _platformSelect;
 	private float[] _platformWidths;
 
-
+	private float _heightMin;
+	private float _heightMax;
+	public Transform _heightMaxPoint;
+	public float _reachableHeight;
+	private float _heightChange;
 
 
 	public PlatformPooling[] _platformPooling;
@@ -33,17 +37,27 @@ public class PlatformAdd : MonoBehaviour {
 			_platformWidths[i] = _platformPooling[i]._pooledPlatforms.GetComponent<BoxCollider>().size.x;
 		}
 		
+		_heightMin = transform.position.y;
+		_heightMax = _heightMaxPoint.position.y;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(transform.position.x < _spawnPoint.position.x) {
 
-			_spawnBetween = Random.Range(_GapMin, _GapMax);
+			_spawnBetween = Random.Range(_gapMin, _gapMax);
 
 			_platformSelect = Random.Range(0, _platformWidths.Length);
 
-			transform.position = new Vector3(transform.position.x + (_platformWidths[_platformSelect] / 2) + _spawnBetween, transform.position.y, transform.position.z);
+			_heightChange = transform.position.y + Random.Range(_reachableHeight, -_reachableHeight);
+
+			if(_heightChange > _heightMax) {
+				_heightChange = _heightMax;
+			} else if(_heightChange < _heightMin) {
+				_heightChange = _heightMin;
+			}
+			
+			transform.position = new Vector3(transform.position.x + (_platformWidths[_platformSelect] / 2) + _spawnBetween, _heightChange, transform.position.z);
 			
 			// Instantiate(_platformTypes[_platformSelect], transform.position, transform.rotation);
 			// Instantiate(_platforms, transform.position, transform.rotation);
