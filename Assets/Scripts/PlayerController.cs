@@ -13,15 +13,12 @@ public class PlayerController : MonoBehaviour {
 	private Rigidbody _rb;
 
 	public float _speedMultiplier;
+	public float _speedMilestone;
+	private float _speedMilestoneCount;
 
 	private float _speedStore;
-
-	public float _speedIncrementPoint;
-	private float _speedPointStore;
-
-
-	private float _speedIncrementCount;
-	private float _speedCountStore;
+	private float _speedMilestoneCountStore;
+	private float _speedMilestoneStore;
 
 	
 
@@ -34,13 +31,13 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 		_rb = GetComponent<Rigidbody>();
 
-		_speedIncrementCount = _speedIncrementPoint;
+		_speedMilestoneCount = _speedMilestone;
 
 		_speedStore = _speed;
+		_speedMilestoneCountStore = _speedMilestoneCount;
+		_speedMilestoneStore = _speedMilestone;
 
-		_speedPointStore = _speedIncrementPoint;
-
-		_speedCountStore = _speedIncrementCount;
+		
 	}
 	
 	// Update is called once per frame
@@ -48,12 +45,10 @@ public class PlayerController : MonoBehaviour {
 		_rb.velocity = new Vector2(_speed, _rb.velocity.y);
 		Debug.DrawRay(transform.position, -Vector3.up * _rayLength, Color.green);
 
-		if(transform.position.x > _speedIncrementCount) {
+		if(transform.position.x > _speedMilestoneCount) {
 
-			_speedIncrementCount += _speedIncrementPoint;
-
-			_speedIncrementCount = _speedIncrementPoint * _speedMultiplier;
-
+			_speedMilestoneCount += _speedMilestone;
+			_speedMilestone = _speedMilestone * _speedMultiplier;
 			_speed = _speed * _speedMultiplier;
 		}
 
@@ -71,11 +66,15 @@ public class PlayerController : MonoBehaviour {
 	void OnCollisionEnter(Collision other)
 	{
 		if(other.gameObject.tag == "Killzone") {
+
+
 			_gm.RestartGame();
 
 			_speed = _speedStore;
-			_speedIncrementPoint = _speedPointStore;
-			_speedIncrementCount = _speedCountStore;
+			_speedMilestoneCount = _speedMilestoneCountStore;
+			_speedMilestone = _speedMilestoneStore;
+
+
 		}
 	}
 }
