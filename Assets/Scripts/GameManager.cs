@@ -12,8 +12,6 @@ public class GameManager : MonoBehaviour {
 	public static float _score;
 	private float _hiscore;
 
-
-
 	public Transform _platformAdder;
 	private Vector3 _platformStartPoint;
 	public PlayerController _pc;
@@ -22,6 +20,13 @@ public class GameManager : MonoBehaviour {
 
 	public static GameManager Instance { get { return m_instance; } }
 	private static GameManager m_instance = null;
+
+	public StateManager _stateManager;
+	private GameState _currentState;
+	
+	public StateGameIntro _stateGameIntro { get;set; }
+	public StateGameMenu _stateGameMenu { get;set; }
+	public StateGamePlay _stateGamePlay { get;set; }
 
 
 	void Awake() {
@@ -32,6 +37,10 @@ public class GameManager : MonoBehaviour {
 			m_instance = this;
 		}
 		DontDestroyOnLoad(this.gameObject);
+
+		_stateGameIntro = new StateGameIntro(this);
+		_stateGameMenu = new StateGameMenu(this);
+		_stateGamePlay = new StateGamePlay(this);
 	}
 
 
@@ -50,6 +59,10 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(_currentState != null) {
+			_currentState.Execute();
+		}
+
 		if(_scoreIncreasing) {
 			_score += Time.deltaTime;
 		}
@@ -61,6 +74,23 @@ public class GameManager : MonoBehaviour {
 
 		_scoreUIText.text = "Score: " + (int)Mathf.Floor(_score);
 		_hiscoreUIText.text = "Highscore: " + (int)Mathf.Floor(_hiscore);
+	}
+
+	public void StartGame () {
+		NewGameState(_stateGameIntro);
+	}
+
+	public void NewGameState(GameState newState) {
+		if(_currentState != null) {
+			_currentState.Exit();
+		}
+
+		_currentState = newState;
+		_currentState.Enter();
+	}
+
+	public void UpdateFSM(GameStates newState) {
+		_stateManager.ChangeState(newState);
 	}
 
 	public void RestartGame() {

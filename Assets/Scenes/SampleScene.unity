@@ -443,11 +443,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnPoint: {fileID: 1778506954}
-  _spawnBetween: 7
+  _spawnBetween: 5
   _gapMin: 10
   _gapMax: 13
   _heightMaxPoint: {fileID: 1570435126}
-  _reachableHeight: 3
+  _reachableHeight: 5
   _platformPooling:
   - {fileID: 54932095}
   - {fileID: 1438382705}
@@ -648,6 +648,7 @@ MonoBehaviour:
   _scoreIncreasing: 1
   _platformAdder: {fileID: 271281778}
   _pc: {fileID: 1879996160}
+  _stateManager: {fileID: 0}
 --- !u!4 &391650861
 Transform:
   m_ObjectHideFlags: 0
