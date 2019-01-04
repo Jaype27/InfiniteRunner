@@ -19,7 +19,7 @@ public class StateManager : MonoBehaviour {
 
 		_activeState = GameStates.INTRO;
 		_gameStates[(int)_activeState].SetActive(true);
-		GameManager.Instance.StartGame();
+		// GameManager.Instance.StartGame();
 	}
 
 	public void ChangeState(GameStates newState) {
@@ -29,13 +29,13 @@ public class StateManager : MonoBehaviour {
 	}
 
 	public void PlayGame() {
-		GameManager.Instance._stateGameMenu.PlayGame();
+		// GameManager.Instance._stateGameMenu.PlayGame();
 		_gameStates[(int)_activeState].SetActive(false);
 		_activeState = GameStates.PLAY;
 		_gameStates[(int)_activeState].SetActive(true);
 	}
 
 	public void QuitGame() {
-		GameManager.Instance._stateGameMenu.QuitGame();
+		// GameManager.Instance._stateGameMenu.QuitGame();
 	}
 }

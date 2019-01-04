@@ -14,7 +14,7 @@ public class StateGameMenu : GameState {
 	public override void Exit() { } 
 
 	public void PlayGame() {
-		_gm.NewGameState(_gm._stateGamePlay);
+		// _gm.NewGameState(_gm._stateGamePlay);
 	}
 
 	public void QuitGame() {

@@ -14,8 +14,8 @@ public class StateGameIntro : GameState {
 
 	public override void Execute() {
 		if(_countDown <= 0) {
-			_gm.NewGameState(_gm._stateGameMenu);
-			_gm.UpdateFSM(GameStates.MENU);
+			// _gm.NewGameState(_gm._stateGameMenu);
+			// _gm.UpdateFSM(GameStates.MENU);
 		} else {
 			_countDown -= Time.deltaTime;
 		}

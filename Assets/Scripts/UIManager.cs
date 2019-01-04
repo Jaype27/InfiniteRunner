@@ -27,9 +27,4 @@ public class UIManager : MonoBehaviour {
 		Time.timeScale = 1f;
 		_pauseMenu.SetActive(false);
 	}
-	
-	public void Quit () {
-		Time.timeScale = 1f;
-		Application.Quit();
-	}
 }
