@@ -447,7 +447,7 @@ MonoBehaviour:
   _gapMin: 10
   _gapMax: 13
   _heightMaxPoint: {fileID: 1570435126}
-  _reachableHeight: 5
+  _reachableHeight: 3
   _platformPooling:
   - {fileID: 54932095}
   - {fileID: 1438382705}
