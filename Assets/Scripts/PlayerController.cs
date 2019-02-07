@@ -9,8 +9,11 @@ public class PlayerController : MonoBehaviour {
 	[SerializeField]
 	private float _jump;
 	[SerializeField]
-	private float _rayLength;
-	private Rigidbody _rb;
+	public bool _isGrounded;
+	public LayerMask _groundLayer;
+
+	private Rigidbody2D _rb;
+	private CapsuleCollider2D _cc;
 
 	public float _speedMultiplier;
 	public float _speedMilestone;
@@ -20,7 +23,8 @@ public class PlayerController : MonoBehaviour {
 	private float _speedMilestoneCountStore;
 	private float _speedMilestoneStore;
 
-	
+	public float _jumpTime;
+	private float _jumpTimeCounter;
 
 	public GameManager _gm;
 
@@ -29,7 +33,8 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_rb = GetComponent<Rigidbody>();
+		_rb = GetComponent<Rigidbody2D>();
+		_cc = GetComponent<CapsuleCollider2D>();
 
 		_speedMilestoneCount = _speedMilestone;
 
@@ -37,33 +42,39 @@ public class PlayerController : MonoBehaviour {
 		_speedMilestoneCountStore = _speedMilestoneCount;
 		_speedMilestoneStore = _speedMilestone;
 
+		_jumpTimeCounter = _jumpTime;
+
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		_isGrounded = Physics2D.IsTouchingLayers(_cc, _groundLayer);
 		_rb.velocity = new Vector2(_speed, _rb.velocity.y);
-		Debug.DrawRay(transform.position, -Vector3.up * _rayLength, Color.green);
 
-		if(transform.position.x > _speedMilestoneCount) {
-
-			_speedMilestoneCount += _speedMilestone;
-			_speedMilestone = _speedMilestone * _speedMultiplier;
-			_speed = _speed * _speedMultiplier;
-		}
-
-		if (isGrounded()) {
-			if(Input.GetKeyDown(KeyCode.Space)){
+		if(Input.GetKeyDown(KeyCode.Space)) {
+			if(_isGrounded) {
 				_rb.velocity = new Vector2(_rb.velocity.x, _jump);
 			}
 		}
+
+		if(Input.GetKey(KeyCode.Space)) {
+			if(_jumpTimeCounter > 0) {
+				_rb.velocity = new Vector2(_rb.velocity.x, _jump);
+				_jumpTimeCounter -= Time.deltaTime;
+			}
+		}
+
+		if(Input.GetKeyUp(KeyCode.Space)) {
+			_jumpTimeCounter = 0;
+		}
+
+		if(_isGrounded) {
+			_jumpTimeCounter = _jumpTime;
+		}
 	}
 
-	bool isGrounded() {
-		return Physics.Raycast(transform.position, -Vector3.up, _rayLength);
-	}
-
-	void OnCollisionEnter(Collision other)
+	void OnCollisionEnter2D(Collision2D other)
 	{
 		if(other.gameObject.tag == "Killzone") {
 

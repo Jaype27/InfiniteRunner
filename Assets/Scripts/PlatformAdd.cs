@@ -34,7 +34,7 @@ public class PlatformAdd : MonoBehaviour {
 		_platformWidths = new float[_platformPooling.Length];
 
 		for(int i = 0; i < _platformPooling.Length; i++) {
-			_platformWidths[i] = _platformPooling[i]._pooledPlatforms.GetComponent<BoxCollider>().size.x;
+			_platformWidths[i] = _platformPooling[i]._pooledPlatforms.GetComponent<BoxCollider2D>().size.x;
 		}
 		
 		_heightMin = transform.position.y;
