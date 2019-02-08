@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-	[SerializeField]
-	private float _speed;
+	public float _speed;
 	[SerializeField]
 	private float _jump;
 	[SerializeField]
@@ -71,6 +70,14 @@ public class PlayerController : MonoBehaviour {
 
 		if(_isGrounded) {
 			_jumpTimeCounter = _jumpTime;
+		}
+
+		if(transform.position.x > _speedMilestoneCount) {
+			_speedMilestoneCount += _speedMilestone;
+
+			_speedMilestone = _speedMilestone * _speedMultiplier;
+			
+			_speed = _speed * _speedMultiplier;
 		}
 	}
 

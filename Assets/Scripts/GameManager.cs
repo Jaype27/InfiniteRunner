@@ -15,7 +15,9 @@ public class GameManager : MonoBehaviour {
 	public Transform _platformAdder;
 	private Vector3 _platformStartPoint;
 	public PlayerController _pc;
+	public Camera _cam;
 	private Vector3 _playerStartPoint;
+	private Vector3 _camStartPoint;
 	private PlatformRemove[] _platformList;
 
 	public static GameManager Instance { get { return m_instance; } }
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour {
 
 		_platformStartPoint = _platformAdder.position;
 		_playerStartPoint = _pc.transform.position;
+		_camStartPoint = _cam.transform.position;
 		
 	}
 	
@@ -70,7 +73,7 @@ public class GameManager : MonoBehaviour {
 	public IEnumerator RestartGameCo() {
 
 		_pc.gameObject.SetActive(false);
-		yield return new WaitForSeconds(1.0f);
+		yield return new WaitForSeconds(2.0f);
 		_platformList = FindObjectsOfType<PlatformRemove>();
 
 		for(int i = 0; i < _platformList.Length; i++) {
@@ -78,6 +81,7 @@ public class GameManager : MonoBehaviour {
 		}
 		
 		_pc.transform.position = _playerStartPoint;
+		_cam.transform.position = _camStartPoint;
 		_platformAdder.position = _platformStartPoint;
 		_pc.gameObject.SetActive(true);
 
