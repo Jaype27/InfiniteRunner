@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlatformPooling : MonoBehaviour {
+public class ObjectPool : MonoBehaviour {
 
-	public GameObject _pooledPlatforms;
-	public int _amountPlatforms;
+	public GameObject _pooledObject;
+	public int _amountPooled;
 	List <GameObject> _pooledObjects;
 	
 	
@@ -17,8 +16,8 @@ public class PlatformPooling : MonoBehaviour {
 	
 		_pooledObjects = new List<GameObject>();
 
-		for(int i = 0; i < _amountPlatforms; i++) {
-			GameObject _object = (GameObject)Instantiate(_pooledPlatforms);
+		for(int i = 0; i < _amountPooled; i++) {
+			GameObject _object = (GameObject)Instantiate(_pooledObject);
 			_object.SetActive(false);
 			_pooledObjects.Add(_object);
 		}
@@ -33,7 +32,7 @@ public class PlatformPooling : MonoBehaviour {
 			}
 		}
 
-		GameObject _object = (GameObject)Instantiate(_pooledPlatforms);
+		GameObject _object = (GameObject)Instantiate(_pooledObject);
 		_object.SetActive(false);
 		_pooledObjects.Add(_object);
 

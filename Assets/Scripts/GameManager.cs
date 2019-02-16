@@ -71,6 +71,10 @@ public class GameManager : MonoBehaviour {
 		_hiscoreUIText.text = "Highscore: " + (int)Mathf.Floor(_hiscore);
 	}
 
+	public void AddScore(int _pointsToAdd) {
+		_score += _pointsToAdd;
+	}
+
 	public void RestartGame() {
 		StartCoroutine("RestartGameCo");
 	}

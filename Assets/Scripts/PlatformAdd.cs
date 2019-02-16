@@ -25,7 +25,11 @@ public class PlatformAdd : MonoBehaviour {
 	private float _heightChange;
 
 
-	public PlatformPooling[] _platformPooling;
+	public ObjectPool[] _platformPooling;
+
+	private GemGenerator _gemGenerator;
+
+	public float _randomGemLocation;
 	
 	// Use this for initialization
 	void Start () {
@@ -34,11 +38,13 @@ public class PlatformAdd : MonoBehaviour {
 		_platformWidths = new float[_platformPooling.Length];
 
 		for(int i = 0; i < _platformPooling.Length; i++) {
-			_platformWidths[i] = _platformPooling[i]._pooledPlatforms.GetComponent<BoxCollider2D>().size.x;
+			_platformWidths[i] = _platformPooling[i]._pooledObject.GetComponent<BoxCollider2D>().size.x;
 		}
 		
 		_heightMin = transform.position.y;
 		_heightMax = _heightMaxPoint.position.y;
+
+		_gemGenerator = FindObjectOfType<GemGenerator>();
 	}
 	
 	// Update is called once per frame
@@ -68,6 +74,9 @@ public class PlatformAdd : MonoBehaviour {
 			spawnPlatform.transform.rotation = transform.rotation;
 			spawnPlatform.SetActive(true);
 
+			if(Random.Range(0f, 100f) < _randomGemLocation) {
+				_gemGenerator.SpawnGems(new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z));
+			}
 			transform.position = new Vector3(transform.position.x + (_platformWidths[_platformSelect] / 2), transform.position.y, transform.position.z);
 
 		}

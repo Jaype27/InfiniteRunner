@@ -287,12 +287,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 54932094}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0f14e3c8f829d54291e7906df3c5479, type: 3}
+  m_Script: {fileID: 11500000, guid: a65de12bbd5d2684284b9c7df5b271ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pooledPlatforms: {fileID: 1170139590378348, guid: 5b8bccb329cb21a42b85a47ca22620d9,
+  _pooledObject: {fileID: 1170139590378348, guid: 5b8bccb329cb21a42b85a47ca22620d9,
     type: 2}
-  _amountPlatforms: 2
+  _amountPooled: 2
 --- !u!4 &54932096
 Transform:
   m_ObjectHideFlags: 0
@@ -343,12 +343,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 99016955}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0f14e3c8f829d54291e7906df3c5479, type: 3}
+  m_Script: {fileID: 11500000, guid: a65de12bbd5d2684284b9c7df5b271ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pooledPlatforms: {fileID: 1442998276291684, guid: 595ffd2cf799c0a4aaf1d975dc135442,
+  _pooledObject: {fileID: 1442998276291684, guid: 595ffd2cf799c0a4aaf1d975dc135442,
     type: 2}
-  _amountPlatforms: 2
+  _amountPooled: 2
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,14 +444,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnPoint: {fileID: 1778506954}
   _spawnBetween: 5
-  _gapMin: 10
-  _gapMax: 13
+  _gapMin: 9
+  _gapMax: 12
   _heightMaxPoint: {fileID: 1570435126}
   _reachableHeight: 3
   _platformPooling:
   - {fileID: 54932095}
   - {fileID: 1438382705}
   - {fileID: 99016957}
+  _randomGemLocation: 50
 --- !u!4 &271281778
 Transform:
   m_ObjectHideFlags: 0
@@ -659,7 +660,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &391650862
 MonoBehaviour:
@@ -802,7 +803,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4223987892324612, guid: c027091a667268447bf18b0a2e236edb, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: _platformRemove
@@ -943,7 +944,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1202797642
 BoxCollider2D:
@@ -1037,7 +1038,7 @@ Transform:
   - {fileID: 1438382704}
   - {fileID: 99016956}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1336173851
 GameObject:
@@ -1227,12 +1228,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1438382703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0f14e3c8f829d54291e7906df3c5479, type: 3}
+  m_Script: {fileID: 11500000, guid: a65de12bbd5d2684284b9c7df5b271ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pooledPlatforms: {fileID: 1643628792526320, guid: a3e0d46d54633fa49b8ab560d10949b2,
+  _pooledObject: {fileID: 1643628792526320, guid: a3e0d46d54633fa49b8ab560d10949b2,
     type: 2}
-  _amountPlatforms: 2
+  _amountPooled: 2
 --- !u!1 &1570435125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,7 +1429,7 @@ RectTransform:
   - {fileID: 1436648474}
   - {fileID: 356598783}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1586,6 +1587,49 @@ Transform:
   m_Father: {fileID: 534669905}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865020472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865020474}
+  - component: {fileID: 1865020473}
+  m_Layer: 0
+  m_Name: GemSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1865020473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1865020472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6bfc4b42f280047902ead56a0481f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gemPool: {fileID: 2095497411}
+  _distBetweenGem: 3
+--- !u!4 &1865020474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1865020472}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2095497412}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1879996154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1601,7 +1645,7 @@ GameObject:
   - component: {fileID: 1879996155}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1803,5 +1847,48 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2095497410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2095497412}
+  - component: {fileID: 2095497411}
+  m_Layer: 0
+  m_Name: GemPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2095497411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2095497410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a65de12bbd5d2684284b9c7df5b271ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pooledObject: {fileID: 1648232498687668, guid: 816e0e532b2f4434c997facfe5293f74,
+    type: 2}
+  _amountPooled: 15
+--- !u!4 &2095497412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2095497410}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1865020474}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
