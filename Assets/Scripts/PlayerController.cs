@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour {
 	private float _jumpTimeCounter;
 
 	public GameManager _gm;
-	public Animator _anim;
+	private Animator _anim;
 
 	
 	

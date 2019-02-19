@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class KillzoneFollow : MonoBehaviour {
 
-[SerializeField]
 	private float _speed;
 	public PlayerController _pc;
 
