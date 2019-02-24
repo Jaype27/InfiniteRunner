@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour {
 	public static float _score;
 	private float _hiscore;
 
+	public int _multiplier;
+	public bool _double;
+
 	public Transform _platformAdder;
 	private Vector3 _platformStartPoint;
 	public PlayerController _pc;
@@ -43,8 +46,10 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		_score = 0f;
+		
+		_score = _score * _multiplier;
 		_hiscore = 0f;
+		_multiplier = 1;
 
 		_hiscore = PlayerPrefs.GetFloat("highscore");
 
@@ -72,6 +77,9 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void AddScore(int _pointsToAdd) {
+		if(_double) {
+			_pointsToAdd = _pointsToAdd * _multiplier;
+		}
 		_score += _pointsToAdd;
 	}
 

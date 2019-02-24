@@ -18,6 +18,6 @@ public class KillzoneFollow : MonoBehaviour {
 		temp.x += _speed * Time.deltaTime;
 		transform.position = temp;
 
-		_speed = _pc._speed;
+		_speed = _pc._speed - 0.5f;
 	}
 }

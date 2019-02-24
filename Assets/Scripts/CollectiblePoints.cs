@@ -21,6 +21,8 @@ public class CollectiblePoints : MonoBehaviour {
 		if(other.gameObject.name == "Player") {
 			_gm.AddScore(_pointAmount);
 			gameObject.SetActive(false);
+			
 		}
+		Debug.Log("PowerActivated");
 	}
 }
