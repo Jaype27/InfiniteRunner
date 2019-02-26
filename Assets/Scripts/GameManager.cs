@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour {
 
 	public static GameManager Instance { get { return m_instance; } }
 	private static GameManager m_instance = null;
+	public bool _powerUpReset;
 
 
 	void Awake() {
@@ -105,5 +106,7 @@ public class GameManager : MonoBehaviour {
 
 		_score = 0;
 		_scoreIncreasing = true;
+
+		_powerUpReset = true;
 	}
 }

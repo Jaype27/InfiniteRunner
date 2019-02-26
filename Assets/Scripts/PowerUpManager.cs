@@ -21,6 +21,12 @@ public class PowerUpManager : MonoBehaviour {
 	void Update () {
 		if(_isPowerActive) {
 			_durationCounter -= Time.deltaTime;
+
+			if(_gm._powerUpReset) {
+				_durationCounter = 0;
+				_gm._powerUpReset = false;
+			}
+
 			Debug.Log(_durationCounter);
 			if(_doublePoints) {
 				_gm._multiplier = _normalMultiplier * 2;

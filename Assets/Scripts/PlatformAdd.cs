@@ -30,6 +30,10 @@ public class PlatformAdd : MonoBehaviour {
 	private GemGenerator _gemGenerator;
 
 	public float _randomGemLocation;
+
+	public float _puHeight;
+	public ObjectPool _powerupPool;
+	public float _powerUpThreshHold;
 	
 	// Use this for initialization
 	void Start () {
@@ -62,11 +66,15 @@ public class PlatformAdd : MonoBehaviour {
 			} else if(_heightChange < _heightMin) {
 				_heightChange = _heightMin;
 			}
+
+			if(Random.Range(0f, 100f) < _powerUpThreshHold) {
+				GameObject _newPowerup = _powerupPool.GetPoolObject();
+				_newPowerup.transform.position = transform.position + new Vector3(_spawnBetween / 2f, Random.Range(_puHeight/2f, _puHeight), 0f);
+				_newPowerup.SetActive(true);
+			}
 			
 			transform.position = new Vector3(transform.position.x + (_platformWidths[_platformSelect] / 2) + _spawnBetween, _heightChange, transform.position.z);
 			
-			// Instantiate(_platformTypes[_platformSelect], transform.position, transform.rotation);
-			// Instantiate(_platforms, transform.position, transform.rotation);
 			
 			GameObject spawnPlatform = _platformPooling[_platformSelect].GetPoolObject();
 
