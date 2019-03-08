@@ -1,15 +1,20 @@
 fileFormatVersion: 2
-guid: 288a90cd2cbaafe418c9581bdff868b7
+guid: 3e84280710cd9014f95548ac850655b5
 TextureImporter:
   fileIDToRecycleName:
-    21300000: crystal-qubodup-ccby3-32-yellow_0
-    21300002: crystal-qubodup-ccby3-32-yellow_1
-    21300004: crystal-qubodup-ccby3-32-yellow_2
-    21300006: crystal-qubodup-ccby3-32-yellow_3
-    21300008: crystal-qubodup-ccby3-32-yellow_4
-    21300010: crystal-qubodup-ccby3-32-yellow_5
-    21300012: crystal-qubodup-ccby3-32-yellow_6
-    21300014: crystal-qubodup-ccby3-32-yellow_7
+    21300000: spikes_0
+    21300002: spikes_1
+    21300004: spikes_2
+    21300006: spikes_3
+    21300008: spikes_4
+    21300010: spikes_5
+    21300012: spikes_6
+    21300014: spikes_7
+    21300016: spikes_8
+    21300018: spikes_9
+    21300020: spikes_10
+    21300022: spikes_11
+    21300024: spikes_12
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -92,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: crystal-qubodup-ccby3-32-yellow_0
+      name: spikes_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 0
-        width: 24
-        height: 32
+        x: 0
+        y: 119
+        width: 42
+        height: 305
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -106,19 +111,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c137bbe9cdd5574da3fc41020bf64d0
+      spriteID: e37b60f97adad0849b072e92922e21af
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crystal-qubodup-ccby3-32-yellow_1
+      name: spikes_1
       rect:
         serializedVersion: 2
-        x: 36
-        y: 0
-        width: 24
-        height: 32
+        x: 57
+        y: 173
+        width: 39
+        height: 252
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -126,19 +131,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2de52c6c96219e741aefeb0d9b2839eb
+      spriteID: fc23e14c9940054439efd1bd01822fd5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crystal-qubodup-ccby3-32-yellow_2
+      name: spikes_2
       rect:
         serializedVersion: 2
-        x: 69
-        y: 0
-        width: 23
-        height: 32
+        x: 128
+        y: 230
+        width: 175
+        height: 168
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,19 +151,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24c5a858830f1944a92f851fa0bafa04
+      spriteID: 15a571f36b19b3544b8d1d413b596eca
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crystal-qubodup-ccby3-32-yellow_3
+      name: spikes_3
       rect:
         serializedVersion: 2
-        x: 100
-        y: 0
-        width: 24
-        height: 32
+        x: 393
+        y: 381
+        width: 91
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,19 +171,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90ded80365735b647a799a1cce94aa6e
+      spriteID: 279b6db1bea34c64bad96e14e5f1085d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crystal-qubodup-ccby3-32-yellow_4
+      name: spikes_4
       rect:
         serializedVersion: 2
-        x: 132
-        y: 0
-        width: 24
-        height: 32
+        x: 548
+        y: 324
+        width: 40
+        height: 91
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,19 +191,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c52a8842ebf92364885089ea8f6540bb
+      spriteID: e6bc2f8811f86f1438c476a47b2319bc
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crystal-qubodup-ccby3-32-yellow_5
+      name: spikes_5
       rect:
         serializedVersion: 2
-        x: 164
-        y: 0
-        width: 24
-        height: 32
+        x: 329
+        y: 220
+        width: 57
+        height: 147
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,19 +211,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9fa9c8c0f151099489136f363e83e390
+      spriteID: d63693109b8870d44aed2417b952acf5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crystal-qubodup-ccby3-32-yellow_6
+      name: spikes_6
       rect:
         serializedVersion: 2
-        x: 196
-        y: 0
-        width: 24
-        height: 32
+        x: 398
+        y: 282
+        width: 145
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,19 +231,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df841c166553f6b4aa5bd2cfadf8bc32
+      spriteID: 7454a70c7e071704dadbaa357e7584e8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crystal-qubodup-ccby3-32-yellow_7
+      name: spikes_7
       rect:
         serializedVersion: 2
-        x: 228
-        y: 0
-        width: 24
-        height: 32
+        x: 131
+        y: 32
+        width: 182
+        height: 183
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,7 +251,107 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa49969ccdbd6db4fa97aac6cdb4aebe
+      spriteID: e404d856030fd524d8d8bf5ce104341f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spikes_8
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 185
+        width: 95
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a23c0dc0b4784bd46be31af3ea37dca4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spikes_9
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 102
+        width: 45
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5927795af61bb224aa2c7708bc789cae
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spikes_10
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 42
+        width: 102
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fcd81e5fd4928049aa94271a586b91f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spikes_11
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 1
+        width: 65
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 916504260ea756849afdfd258ac82aa5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spikes_12
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 68
+        width: 158
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0054e1483e23d654f8bc21ec242d1060
       vertices: []
       indices: 
       edges: []
@@ -254,7 +359,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 3db857b4aa3bf5c4fa16005f46cafcfb
+    spriteID: 021af01b4cff37e4a94acb9e74e5a5b6
     vertices: []
     indices: 
     edges: []

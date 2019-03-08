@@ -23,6 +23,5 @@ public class CollectiblePoints : MonoBehaviour {
 			gameObject.SetActive(false);
 			
 		}
-		Debug.Log("PowerActivated");
 	}
 }

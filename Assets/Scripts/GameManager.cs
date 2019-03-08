@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
 	public Text _scoreUIText;
 	public Text _hiscoreUIText; 
 	public bool _scoreIncreasing;
-	public static float _score;
+	public float _score;
 	private float _hiscore;
 
 	public int _multiplier;
@@ -18,8 +18,6 @@ public class GameManager : MonoBehaviour {
 	public Transform _platformAdder;
 	private Vector3 _platformStartPoint;
 	public PlayerController _pc;
-	// public Camera _cam;
-	// private Vector3 _camStartPoint;
 
 	public KillzoneFollow _killZone;
 	private Vector3 _killZoneStartPoint;
@@ -48,7 +46,7 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 
 		
-		_score = _score * _multiplier;
+		_score *= _multiplier;
 		_hiscore = 0f;
 		_multiplier = 1;
 
@@ -56,7 +54,6 @@ public class GameManager : MonoBehaviour {
 
 		_platformStartPoint = _platformAdder.position;
 		_playerStartPoint = _pc.transform.position;
-		// _camStartPoint = _cam.transform.position;
 		_killZoneStartPoint = _killZone.transform.position;
 		
 	}
@@ -79,7 +76,7 @@ public class GameManager : MonoBehaviour {
 
 	public void AddScore(int _pointsToAdd) {
 		if(_double) {
-			_pointsToAdd = _pointsToAdd * _multiplier;
+			_pointsToAdd *= _multiplier;
 		}
 		_score += _pointsToAdd;
 	}
@@ -99,7 +96,6 @@ public class GameManager : MonoBehaviour {
 		}
 		
 		_pc.transform.position = _playerStartPoint;
-		// _cam.transform.position = _camStartPoint;
 		_killZone.transform.position = _killZoneStartPoint;
 		_platformAdder.position = _platformStartPoint;
 		_pc.gameObject.SetActive(true);

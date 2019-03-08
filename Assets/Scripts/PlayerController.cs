@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour {
 	public float _groundCheckRadius;
 
 	private Rigidbody2D _rb;
-	// private CapsuleCollider2D _cc;
 
 	public float _speedMultiplier;
 	public float _speedMilestone;
@@ -36,7 +35,6 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_rb = GetComponent<Rigidbody2D>();
-		// _cc = GetComponent<CapsuleCollider2D>();
 		_anim = GetComponent<Animator>();
 
 		_speedMilestoneCount = _speedMilestone;
@@ -54,7 +52,6 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		
 		_isGrounded = Physics2D.OverlapCircle(_groundCheck.position, _groundCheckRadius, _groundLayer);
-		// _isGrounded = Physics2D.IsTouchingLayers(_cc, _groundLayer);
 		_rb.velocity = new Vector2(_speed, _rb.velocity.y);
 
 		if(Input.GetKeyDown(KeyCode.Space)) {
@@ -81,16 +78,15 @@ public class PlayerController : MonoBehaviour {
 		if(transform.position.x > _speedMilestoneCount) {
 			_speedMilestoneCount += _speedMilestone;
 
-			_speedMilestone = _speedMilestone * _speedMultiplier;
+			_speedMilestone *= _speedMultiplier;
 			
-			_speed = _speed * _speedMultiplier;
+			_speed *= _speedMultiplier;
 		}
 
 		_anim.SetBool("isGrounded", _isGrounded);
 	}
 
-	void OnCollisionEnter2D(Collision2D other)
-	{
+	void OnCollisionEnter2D(Collision2D other) {
 		if(other.gameObject.tag == "Killzone") {
 
 

@@ -37,7 +37,6 @@ public class PlatformAdd : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		// _platformWidth = _platforms.GetComponent<BoxCollider>().size.x;
 		
 		_platformWidths = new float[_platformPooling.Length];
 
